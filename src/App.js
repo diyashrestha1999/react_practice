@@ -9,8 +9,15 @@ function App() {
     const {username, password} = data
     const [display, setDisplay]=useState({})
     const changeHandler=e=>{
-        setData({...data,[e.target.name]:[e.target.value]})
+        // setData({...data,[e.target.name]:[e.target.value]})
+      const { name, value } = e.target;
+    setData((data) => ({
+      ...data,
+      [name]: value,
+    }));
+
     }
+
     const submitHandler=e=>{
         e.preventDefault();
         console.log(data)
